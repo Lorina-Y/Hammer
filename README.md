@@ -1,5 +1,4 @@
-# Forecasting the 2024 US Presidential Election: A Poll-of-Polls Approach to Predict the Outcome
-
+# Comparative Analysis of Sandwich Ingredient Prices Across Grocery Stores
 ## Overview
 
 This repo utilizing use Hammer dataset to conduct comparative analysis of sandwich ingredient prices across grocery stores, designed by Lorina Yang and Ruiying Li. Using the raw data from the website https://jacobfilipp.com/hammer/

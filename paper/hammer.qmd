@@ -22,13 +22,13 @@ library(ggplot2)
 
 bread_data <-
   read_csv(
-    file = "data/clean_data/white_bread_data.csv",
+    file = "../data/clean_data/white_bread_data.csv",
     show_col_types = FALSE
   )
 
 ham_data <-
   read_csv(
-    file = "data/clean_data/ham_data.csv",
+    file = "../data/clean_data/ham_data.csv",
     show_col_types = FALSE
   )
 ```
@@ -41,9 +41,13 @@ Using the Hammer dataset, we cleaned and standardized price information with SQL
 The paper is organized as follows: we describe the data and measurement, present our findings in result section, and discuss 1) correlation vs. causation; 2) missing data; 3) sources of bias in discussion section and conclude with the practical implications of our results.
 
 # Data
-This study uses data from the Hammer dataset [@hammer], which provides detailed pricing information for grocery products across several major stores, including Metro, Voila, and Walmart. The product we analyzed are two main ingredients for making sandwich: Ham and White bread, and analyzing data through SQL and graphing data with R code[@citeR] and ggplot[@ggplot2]
+
+This study uses data from the Hammer dataset [@hammer], which provides detailed pricing information for grocery products across several major stores, including Metro, Voila, and Walmart. The product we analyzed are two main ingredients for making sandwich: Ham and White bread, and analyzing data through SQL and graphing data with R code[@citeR] and ggplot[@ggplot2].
+
 The two origin datasets has 15 variables in total, and this paper only interested in the following 4 variables: id, product name, price per unit and 3 vendors. Through this data, this study aim to analyzed the comparison of the price of two sandwich ingredients in specific 3 grocery stores to find the most cost-effective way of making a sandwich.
+
 # Measurement
+
 The Hammer dataset represents a snapshot of grocery prices at specific points in time. It translates real-world grocery pricing dynamics into structured data for analysis. The dataset use in this paper simplifies this complexity by providing records for product prices of white bread and turkey ham at Metro, Voila, and Walmart. To ensure comparability across Metro, Voila, and Walmart, the dataset we use contain standardized price per unit for white bread and turkey ham to dollars per 100g, and it is draw by record the price of sale in each grocery store.
 
 # Result

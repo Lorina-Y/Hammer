@@ -43,6 +43,6 @@ head(ham_data)
 
 
 #### Save data ####
-write_csv(ham_data, "Desktop/sta304/hammer/data/simulated_data/ham_simulated_data.csv")
-write_csv(white_bread_data, "Desktop/sta304/hammer/data/simulated_data/white_bread_simulated_data.csv")
+write_csv(ham_data, "data/simulated_data/ham_simulated_data.csv")
+write_csv(white_bread_data, "data/simulated_data/white_bread_simulated_data.csv")
 

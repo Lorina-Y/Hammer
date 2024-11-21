@@ -10,8 +10,8 @@
 #### Workspace setup ####
 library(tidyverse)
 
-bread <- read_csv("Desktop/sta304/hammer/data/clean_data/white_bread_data.csv")
-ham <- read_csv("Desktop/sta304/hammer/data/clean_data/ham_data.csv")
+bread <- read_csv("data/clean_data/white_bread_data.csv")
+ham <- read_csv("data/clean_data/ham_data.csv")
 
 # Check if data is loaded and is a data frame
 if (exists("bread")) {

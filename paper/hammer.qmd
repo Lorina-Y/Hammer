@@ -36,13 +36,15 @@ ham_data <-
 # Introduction
 Grocery prices have a direct impact on household budgets, making it crucial for consumers to know where they can find the best deals. This study examines the cost of making a standard sandwich—composed of white bread and turkey ham—across three major grocery stores: Metro, Voila, and Walmart. Despite the growing availability of price data, there remains a need for direct, transparent comparisons to inform consumer decisions and highlight pricing trends.
 
-Using the Hammer dataset, we cleaned and standardized price information with SQL and analyzed it using R/Python[@citeR] with packages tidyverse[@tidyverse] and dplyr[@dplyr] . Our findings reveal significant price variations between stores, offering practical insights for budget-conscious shoppers. By understanding these differences, consumers can make more informed choices, and our analysis underscores the importance of monitoring grocery price dynamics.
+Using the Hammer dataset, we cleaned and standardized price information with SQL and analyzed it using statistical programming language R[@citeR] with packages tidyverse[@tidyverse] and dplyr[@dplyr]. 
+
+Our findings reveal significant price variations between stores, offering practical insights for budget-conscious shoppers. By understanding these differences, consumers can make more informed choices, and our analysis underscores the importance of monitoring grocery price dynamics.
 
 The paper is organized as follows: we describe the data and measurement, present our findings in result section, and discuss 1) correlation vs. causation; 2) missing data; 3) sources of bias in discussion section and conclude with the practical implications of our results.
 
 # Data
 
-This study uses data from the Hammer dataset [@hammer], which provides detailed pricing information for grocery products across several major stores, including Metro, Voila, and Walmart. The product we analyzed are two main ingredients for making sandwich: Ham and White bread, and analyzing data through SQL and graphing data with R code[@citeR] and ggplot[@ggplot2].
+This study uses data from the hammer dataset[@hammer], which provides detailed pricing information for grocery products across several major stores, including Metro, Voila, and Walmart. The product we analyzed are two main ingredients for making sandwich: Ham and White bread, and analyzing data through SQL and graphing data with R code[@citeR] and ggplot[@ggplot2].
 
 The two origin datasets has 15 variables in total, and this paper only interested in the following 4 variables: id, product name, price per unit and 3 vendors. Through this data, this study aim to analyzed the comparison of the price of two sandwich ingredients in specific 3 grocery stores to find the most cost-effective way of making a sandwich.
 
@@ -52,7 +54,7 @@ The Hammer dataset represents a snapshot of grocery prices at specific points in
 
 # Result
 
-The bar chart(@fig-ham) shows the price per unit of turkey ham across Metro, Voila, and Walmart, revealing significant differences: Metro and Voila have higher average prices at around $2.7 and $2.5 per 100g, respectively, while Walmart offers a much cheaper option at $1.83 per 100g. These results highlight substantial price variability among vendors, suggesting that Walmart may be the more cost-effective choice for consumers seeking to save money on turkey ham.
+The graph (@fig-ham) shows the price per unit of turkey ham across Metro, Voila, and Walmart, revealing significant differences: Metro and Voila have higher average prices at around $2.7 and $2.5 per 100g, respectively, while Walmart offers a much cheaper option at $1.83 per 100g. These results highlight substantial price variability among vendors, suggesting that Walmart may be the more cost-effective choice for consumers seeking to save money on turkey ham.
 ```{r,fig.height= 5, fig.width = 8}
 #| label: fig-ham
 #| fig-cap: A Bar chart compares the price per unit of turkey ham across Metro, Voila, and Walmart
@@ -69,7 +71,7 @@ ggplot(ham_data, aes(x = vendor, y = price_per_unit)) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-The bar chart(@fig-bread) illustrates the price per unit of white bread at Metro, Voila, and Walmart. Metro and Voila have similar, relatively low unit prices, both just above $1 per unit, while Walmart's price is significantly higher, exceeding $3 per unit. This striking difference highlights Walmart's considerably higher pricing for white bread compared to the other two vendors, which could have important implications for consumer purchasing decisions.
+The graph (@fig-bread) illustrates the price per unit of white bread at Metro, Voila, and Walmart. Metro and Voila have similar, relatively low unit prices, both just above 1 dollar per unit, while Walmart's price is significantly higher, exceeding 3 dollar per unit. This striking difference highlights Walmart's considerably higher pricing for white bread compared to the other two vendors, which could have important implications for consumer purchasing decisions.
 ```{r, fig.height=6, fig.width=8}
 #| label: fig-bread
 #| fig-cap: "A Bar chart illustrating the price per unit of white bread across three grocery vendors: Metro, Voila, and Walmart"
@@ -87,19 +89,19 @@ ggplot(bread_data, aes(x = vendor, y = price_per_unit)) +
 
 ```
 
-By add the price for bread and turkey ham for each store, we found price of sandwich is around $3.65 in Metro, $3.52 in Voila and $5.33 in Walmart. So Voila offere cheapest sandwich.
+By add the price for bread and turkey ham for each store, we found price of sandwich is around 3.65 dollar in Metro, 3.52 dollar in Voila and 5.33 dollar in Walmart. So Voila offer cheapest sandwich.
 
 # Discussion
 
-## correlation vs. causation
+## Correlation vs. Causation
 
 Our results show significant differences in the average prices of white bread and turkey ham across Metro, Voila, and Walmart (see Results section). However, it is crucial to emphasize that these findings only reflect correlations and not causal relationships. The observed price variations may be influenced by factors such as vendor-specific supply chain agreements, store locations, or target demographics, rather than deliberate pricing strategies. Additionally, other variables like seasonal promotions or regional economic conditions could play a role in these price disparities but were not included in our analysis. Therefore, while we can compare and describe price trends, we cannot draw causal inferences from these data.
 
-## missing data
+## Missing data
 
 As discussed in the Data and Measurement sections, the Hammer dataset provided comprehensive pricing information; however, potential gaps remain. Missing entries for certain product variations or incomplete price data could have affected the accuracy of our computed averages. Although our SQL-based cleaning process aimed to standardize and organize the dataset, some missing values might still introduce bias into our findings. Addressing these data gaps through imputation methods or additional data collection would strengthen the reliability of future analyses.
 
-## sources of bias
+## Sources of bias
 Several biases may have impacted our analysis. Selection bias is a concern, as the dataset may overrepresent certain product types or price ranges, especially if premium or discounted items were disproportionately included. This could affect the generalizability of our conclusions. Additionally, measurement bias might arise from differences in packaging sizes and unit formats, despite our efforts to standardize prices to dollars per 100g (see Measurement section). Finally, temporal bias should be considered, as our data represents a single point in time. Grocery prices fluctuate, and our analysis does not account for these temporal variations, limiting the scope of our findings. These biases highlight the importance of cautious interpretation and suggest directions for future research to improve the robustness of grocery price comparisons.
 
 # Conclusion

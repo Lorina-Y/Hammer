@@ -11,7 +11,7 @@ library(tidyverse)
 library(dplyr)
 
 #### Clean data ####
-raw_data <- read_csv("Desktop/sta304/hammer/data/raw_data/hammer_data.csv")
+raw_data <- read_csv("data/raw_data/hammer_data.csv")
 
 
 # Filter out rows with missing price_per_unit
@@ -48,7 +48,7 @@ ham_data <- data_clean %>%
   filter(str_detect(product_name, "Ham"))
 
 #### Save data ####
-write_csv(white_bread_data, "Desktop/sta304/hammer/data/clean_data/white_bread_data.csv")
-write_csv(ham_data, "Desktop/sta304/hammer/data/clean_data/ham_data.csv")
+write_csv(white_bread_data, "data/clean_data/white_bread_data.csv")
+write_csv(ham_data, "data/clean_data/ham_data.csv")
 
 
